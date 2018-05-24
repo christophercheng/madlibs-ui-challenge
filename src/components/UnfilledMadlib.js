@@ -18,7 +18,7 @@ export default ({
       return NumberInputField;
     }
     const labelPrefix = 'word ending with';
-    if (label.startsWith(labelPrefix)) {
+    if (label.toLowerCase().startsWith(labelPrefix)) {
       return TextEndingInputField(label.substring(labelPrefix.length + 1));
     }
     return TextInputField;

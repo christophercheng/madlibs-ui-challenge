@@ -3,29 +3,24 @@ import FilledMadlib from './FilledMadlib';
 import UnfilledMadlib from './UnfilledMadlib';
 import './MadlibForm.css';
 
-export default class extends Component { //eslint-disable-line
-  state = this.getInitialState();
-
-  getInitialState() {
-    const fields = this.getFormFieldsFromMadlibText();
-    return {
-      fields,
-      userValues: [],
-      submitted: false,
-      started: false,
-    };
-  }
+export default class extends Component {
+  state = {
+    fields: this.getFormFieldsFromMadlibText(),
+    userValues: [],
+    submitted: false,
+    started: false,
+  };
 
   getFormFieldsFromMadlibText() {
     function capitalizate(string) {
       return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
     }
     const fields = [];
-    const { inputRegex } = this.props;
-    let result = inputRegex.exec(this.props.madlib);
+    const { inputRegex, madlib } = this.props;
+    let result = inputRegex.exec(madlib);
     while (result) {
       fields.push(capitalizate(result[1]));
-      result = inputRegex.exec(this.props.madlib);
+      result = inputRegex.exec(madlib);
     }
     return fields;
   }
@@ -52,7 +47,7 @@ export default class extends Component { //eslint-disable-line
         </div>
       }
     </header>
-  );
+  )
 
   renderForm = () => {
     const newProps = {
