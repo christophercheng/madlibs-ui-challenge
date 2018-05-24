@@ -17,11 +17,14 @@ export default class extends Component { //eslint-disable-line
   }
 
   getFormFieldsFromMadlibText() {
+    function capitalizate(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+    }
     const fields = [];
     const { inputRegex } = this.props;
     let result = inputRegex.exec(this.props.madlib);
     while (result) {
-      fields.push(result[1]);
+      fields.push(capitalizate(result[1]));
       result = inputRegex.exec(this.props.madlib);
     }
     return fields;

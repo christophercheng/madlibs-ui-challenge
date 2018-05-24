@@ -34,12 +34,15 @@ export default (
     }
 
     onChange = (e) => {
+      function capitalizate(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+      }
       if (this.state.errorMessage.length) {
         this.setState({ errorMessage: '' });
       }
       if (!e.target.value || dynamicValidator(e.target.value)) {
         this.setState({
-          value: e.target.value,
+          value: capitalizate(e.target.value),
         });
       }
     }
