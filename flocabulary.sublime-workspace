@@ -1,0 +1,958 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"direct",
+				"directoryData"
+			],
+			[
+				"fetch",
+				"fetchAndProcessServerData"
+			],
+			[
+				"CO",
+				"const"
+			],
+			[
+				"manufacturer",
+				"manufacturerId"
+			],
+			[
+				"manu",
+				"manufacturerId"
+			],
+			[
+				"rout",
+				"routeConfigMap"
+			],
+			[
+				"iniit",
+				"initialRouteName"
+			],
+			[
+				"sw",
+				"switchConfig"
+			],
+			[
+				"create",
+				"createSwitchNavigator"
+			],
+			[
+				"inii",
+				"initialRouteName"
+			],
+			[
+				"initial",
+				"initialRouteName"
+			],
+			[
+				"initi",
+				"initialRouteName"
+			],
+			[
+				"init",
+				"initialRouteName"
+			],
+			[
+				"dataFetc",
+				"dataFetchInProgress"
+			],
+			[
+				"minM",
+				"minMinutesToRefresh"
+			],
+			[
+				"fec",
+				"fetchedCategoryData"
+			],
+			[
+				"filter",
+				"filterOutEmptyCategories"
+			],
+			[
+				"authTo",
+				"authTokenExists"
+			],
+			[
+				"TabNaviga",
+				"TabNavigationStack"
+			],
+			[
+				"initia",
+				"InitializeRootStack"
+			],
+			[
+				"Tab",
+				"TabNavigationStack"
+			],
+			[
+				"cal",
+				"calculateCartQuantityCost"
+			],
+			[
+				"new",
+				"newStoreData"
+			],
+			[
+				"update",
+				"updateRefreshTracking"
+			],
+			[
+				"min",
+				"minMinutesToRefresh"
+			],
+			[
+				"refresh",
+				"refreshTrackingReducer"
+			],
+			[
+				"refre",
+				"refreshTrackingReducer"
+			],
+			[
+				"main",
+				"mainItemDetailsReducer"
+			],
+			[
+				"category",
+				"categoryToMainsHashReducer"
+			],
+			[
+				"categoryTo",
+				"categorytoMainsHash"
+			],
+			[
+				"refreshTrack",
+				"refreshTrackingReducer"
+			],
+			[
+				"cat",
+				"categoryToMainsHashReducer"
+			],
+			[
+				"cart",
+				"cartReducer"
+			],
+			[
+				"Sign",
+				"SignOutButton"
+			],
+			[
+				"Ca",
+				"CategoryScreen"
+			],
+			[
+				"App",
+				"AppOrAuthStackSwitcher"
+			],
+			[
+				"categor",
+				"categoryToMainsHash"
+			],
+			[
+				"A",
+				"AutoRefreshServerDataWidget"
+			],
+			[
+				"catego",
+				"categoryToMainsHash"
+			],
+			[
+				"build",
+				"buildCategoryToMainsHash"
+			],
+			[
+				"_re",
+				"_reCalculateCart"
+			],
+			[
+				"CATEG",
+				"CATEGORY_LIST_SCREEN"
+			],
+			[
+				"ROOT",
+				"ROOT_SWITCHER_SCREEN"
+			],
+			[
+				"CA",
+				"CATEGORY_LIST_SCREEN"
+			],
+			[
+				"SIG",
+				"SIGN_OUT_SCREEN"
+			],
+			[
+				"SIGN_",
+				"SIGN_IN_SCREEN"
+			],
+			[
+				"UPDATE_",
+				"UPDATE_REFRESH_TRACKIGN"
+			],
+			[
+				"refres",
+				"refreshInProgress"
+			],
+			[
+				"REFRESH",
+				"REFRESH_COMPLETED"
+			],
+			[
+				"lastRe",
+				"lastRefreshCheckDate"
+			],
+			[
+				"remov",
+				"removingInProcess"
+			],
+			[
+				"is",
+				"isAuthTokenValid"
+			],
+			[
+				"Refresh",
+				"RefreshServerDataWidget"
+			],
+			[
+				"store",
+				"storeAuthToken"
+			],
+			[
+				"Cart",
+				"CartWidget"
+			],
+			[
+				"checkout",
+				"checkoutInProgress"
+			],
+			[
+				"chec",
+				"checkoutInProgress"
+			],
+			[
+				"EmptyConta",
+				"emptyContainerText"
+			],
+			[
+				"ma",
+				"mainItemDetails"
+			],
+			[
+				"_",
+				"_calculateCartCost"
+			],
+			[
+				"remove",
+				"removeDiscontinuedCartItem"
+			],
+			[
+				"Re",
+				"RefreshMenuWidget"
+			],
+			[
+				"minu",
+				"minutesSinceLastRefresh"
+			],
+			[
+				"last",
+				"lastRefreshDate"
+			],
+			[
+				"S",
+				"SIGN_IN"
+			],
+			[
+				"navigatio",
+				"navigationOptions"
+			],
+			[
+				"Acco",
+				"AccountScreen"
+			],
+			[
+				"per",
+				"persistConfig"
+			],
+			[
+				"conta",
+				"ContainerCartScreen"
+			],
+			[
+				"cont",
+				"ContainerCatScreen"
+			],
+			[
+				"con",
+				"ContainerItemScreen"
+			],
+			[
+				"T",
+				"TouchableHighlight"
+			],
+			[
+				"Con",
+				"containerCatListScreen"
+			],
+			[
+				"Cred",
+				"CredentialsWidget"
+			],
+			[
+				"AD",
+				"ADD_ITEM_TO_CART"
+			],
+			[
+				"Toubh",
+				"TouchableWithoutFeedback"
+			],
+			[
+				"AuthLoading",
+				"AuthLoadingScreen"
+			],
+			[
+				"ios-",
+				"ios-information-circle"
+			],
+			[
+				"Dra",
+				"DrawerNavigation"
+			],
+			[
+				"DrawerNa",
+				"DrawerNavigation"
+			],
+			[
+				"react",
+				"react-native"
+			],
+			[
+				"Notifications",
+				"NotificationsScreen"
+			],
+			[
+				"navi",
+				"navigationOptions"
+			],
+			[
+				"space",
+				"space-around"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"h",
+				"horoscopes"
+			],
+			[
+				"p",
+				"projects"
+			],
+			[
+				"q",
+				"quiz"
+			],
+			[
+				"back",
+				"background-image"
+			],
+			[
+				"bacgkroun",
+				"background-repeat"
+			],
+			[
+				"pading",
+				"padding-right"
+			],
+			[
+				"to",
+				"toLocaleTimeString"
+			],
+			[
+				"subcate",
+				"subcategoryData"
+			],
+			[
+				"Su",
+				"Subcategory"
+			],
+			[
+				"sub",
+				"subcategories"
+			],
+			[
+				"han",
+				"handleChangeSubcategory"
+			],
+			[
+				"action",
+				"actionFetchingData"
+			],
+			[
+				"handle",
+				"handleFetchingErro"
+			],
+			[
+				"data",
+				"data"
+			],
+			[
+				"select",
+				"selectedSubcategory"
+			],
+			[
+				"sto",
+				"storeFactory"
+			],
+			[
+				"ColorDetail",
+				"ColorDetailContainer"
+			],
+			[
+				"AddC",
+				"AddColorFormContainer"
+			],
+			[
+				"Add",
+				"AddColorForm"
+			],
+			[
+				"child",
+				"childContextTypes"
+			],
+			[
+				"P",
+				"PAUSE_5SECS"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"decre",
+				"decrementProgressAction"
+			],
+			[
+				"Car",
+				"CardBlock"
+			],
+			[
+				"ad",
+				"Administrator"
+			],
+			[
+				"expandColl",
+				"expandCollapseFN"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "import React, { Component } from 'react';\nimport logo from './logo.svg';\nimport './App.css';\n\n// eslint-disable-next-line\nclass App extends Component {\n  render() {\n    return (\n      <div className=\"App\">\n        <header className=\"App-header\">\n          <img src={logo} className=\"App-logo\" alt=\"logo\" />\n          <h1 className=\"App-title\">Welcome to React</h1>\n        </header>\n        <p className=\"App-intro\">\n          To get started, edit <code>src/App.js</code> and save to reload.\n        </p>\n      </div>\n    );\n  }\n}\n\nexport default App;\n",
+			"file": "/Users/ccheng/Dev/react/interviews/clevertech/src/App.js",
+			"file_size": 578,
+			"file_write_time": 131713878704461927,
+			"settings":
+			{
+				"buffer_size": 552,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nSublimeLinter\n-------------\n\n  SublimeLinter 4.6\n  =================\n  \n  You can now set \"lint_mode\" per linter.\n  \n  If you have \"background\" as your default mode, this new setting allows you\n  to run some linters only on save, or manually.\n  \n  http://www.sublimelinter.com/en/stable/linter_settings.html\n",
+			"settings":
+			{
+				"buffer_size": 359,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/ESLint/ESLint.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Javascript.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/ESLint/ESLint.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 209.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"installe",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"package contro",
+				"Package Control: Install Package"
+			],
+			[
+				"package control:",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 428.0
+	},
+	"console":
+	{
+		"height": 143.0,
+		"history":
+		[
+			"window.set_layout({'cols': [0,0.33333333,0.66666666,1],'rows': [0.0,0.5,1.0],'cells': [[0,0,1,1],[1,0,2,1],[2,0,3,1],[0,1,1,2],[1,1,2,2],[2,1,3,2]]})"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge"
+	],
+	"file_history":
+	[
+		"/Users/ccheng/Dev/javascript/hackerrank/test.js",
+		"/Users/ccheng/Dev/react/hyperscience/src/fetchData.js",
+		"/Users/ccheng/Dev/react/hyperscience/src/App.js",
+		"/Users/ccheng/Dev/react/hyperscience/src/Root.js",
+		"/Users/ccheng/Dev/javascript/coding-problems/groupedv2.js",
+		"/Users/ccheng/Dev/javascript/coding-problems/grouped.js",
+		"/Users/ccheng/Dev/javascript/coding-problems/group.ts",
+		"/Users/ccheng/Dev/javascript/coding-problems/refactor.js",
+		"/Users/ccheng/Dev/javascript/coding-problems/hello.ts",
+		"/Users/ccheng/Dev/javascript/coding-problems/refactored.js",
+		"/Users/ccheng/Dev/javascript/coding-problems/hello.js",
+		"/Users/ccheng/Downloads/coding-problems/group.ts",
+		"/Users/ccheng/Dev/redux/todos/src/reducers/index.js",
+		"/Users/ccheng/Dev/redux/todos/src/components/Link.js",
+		"/Users/ccheng/Dev/redux/todos/src/localStorage.js",
+		"/Users/ccheng/Dev/redux/todos/src/index.js",
+		"/Users/ccheng/Dev/react-native/react-navigation/examples/NavigationPlayground/js/SwitchWithStacks.js",
+		"/Users/ccheng/Dev/react-native/react-navigation/src/routers/SwitchRouter.js",
+		"/Users/ccheng/Dev/react-native/react-navigation/src/navigators/createSwitchNavigator.js",
+		"/Users/ccheng/Dev/react-native/react-navigation/examples/NavigationPlayground/App.js",
+		"/Users/ccheng/Dev/react-native/react-navigation/src/routers/StackRouter.js",
+		"/Users/ccheng/Dev/react-native/react-navigation/examples/NavigationPlayground/node_modules/metro/src/lib/polyfills/require.js",
+		"/Users/ccheng/Dev/react-native/react-navigation/src/navigators/createStackNavigator.js",
+		"/Users/ccheng/Dev/react-native/react-navigation/examples/NavigationPlayground/js/App.js",
+		"/Users/ccheng/Dev/react-native/foodorder/AppScreenRouter.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/store/actions.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/CartWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/__tests__/reducerUser.test.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/__tests__/reducerFoodStore.test.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/tools/fetchAndProcessServerData.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/AutoRefreshServerDataWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/store/reducers/reducerUser.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/store/configureStore.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/tools/constants.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/store/reducers/reducerFoodStore.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/LoadingScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/App.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/SignInScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/SignUpScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/CartScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/store/actionCreators.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/AppOrAuthStackSwitcher.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/WelcomeScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/CartListItemWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/CategoryListScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/CartTitleWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/LogoHeader.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/ItemScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/App.test.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/CredentialsWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/SignOutButton.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/PhoneInput.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/AccountScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/CategoryScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/EmptyCartWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/RootSwitcherScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/node_modules/fsevents/node_modules/har-validator/lib/browser/promise.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/AutoRefreshDataWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/node_modules/react-native/Libraries/Image/RCTImageCache.m",
+		"/Users/ccheng/Dev/react-native/foodorder/node_modules/winchan/test/qunit/qunit.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/constants/constants.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/tools/dataFetch.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/RefreshMenuWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/AppScreenRouter.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/PasswordInput.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerRefreshMenuWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerSignOutButton.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerAuthLoadingScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerAccountScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCartScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerItemScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCatScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerSignUpScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerSignInScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/AppRouter.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCatListScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/CatListScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/WelcomeScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/AppRouter.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/AppStart.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/screenComponents/AppStart.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/tools/priceConversion.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/CatScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/ItemScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/RootSwitcherScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/CartScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/AccountScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/AuthLoadingScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/widgets/CartTotalsWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/SignUpScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/CatListScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerWelcomeScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/SignInScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/README.md",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/LoadingScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/CredentialsWidget.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/SignOutButton.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/untitled",
+		"/Users/ccheng/Dev/react-native/foodorder/src/tools/PriceConversion.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCatPage.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCatListPage.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerItemPage.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCartPage.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/MenuScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/AuthLoadingScreen.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/CartPage.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/CatPage.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/CatList.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/store/reducers/reducerMains.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/store/reducers/reducerCategories.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/PasswordInput.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/PhoneInput.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCatList.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/components/ItemPage.js",
+		"/Users/ccheng/Dev/react-native/foodorder/src/configureStore.js",
+		"/Users/ccheng/Dev/react-native/foodshop/Notifications.js",
+		"/Users/ccheng/Dev/react-native/foodshop/SettingsScreen.js",
+		"/Users/ccheng/Dev/react-native/foodshop/DetailsScreen.js",
+		"/Users/ccheng/Dev/react-native/foodshop/App_old.js",
+		"/Users/ccheng/Dev/react-native/foodshop/HomeScreen.js",
+		"/Users/ccheng/Dev/react-native/foodshop/ModalButton.js",
+		"/Users/ccheng/Dev/react-native/foodshop/ModalScreen.js",
+		"/Users/ccheng/Dev/react-native/foodshop/LogoTitle.js",
+		"/Users/ccheng/Dev/react-native/foodshop/App.js",
+		"/Users/ccheng/Dev/react-native/foodshop/App.test.js",
+		"/Users/ccheng/Dev/react-native/foodshop/package.json",
+		"/Users/ccheng/Dev/react-native/foodshop/app.json",
+		"/Users/ccheng/Downloads/RecoveryFiles/RecoveryFiles/Development/django/tr/tennis_rungs.py"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/ccheng/Dev/react/interviews/clevertech/src/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 552,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								144,
+								144
+							]
+						],
+						"settings":
+						{
+							"SL.14.region_keys":
+							[
+							],
+							"SL.24.region_keys":
+							[
+								"SL.eslint.Highlights.|39ecf6a82ab82979eed67a533a3878db69ae7b205e630be4ecea5df59c3df0da|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"sublime_linter.protected_regions"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 359,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								359,
+								359
+							]
+						],
+						"settings":
+						{
+							"SL.17.region_keys":
+							[
+							],
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				2,
+				0,
+				3,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			],
+			[
+				2,
+				1,
+				3,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.33333333,
+			0.66666666,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 114.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 292.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/TypeScript/TypeScript.sublime-build",
+	"project": "flocabulary.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dev/javascript/react/iso_testing/index-client.js"
+			],
+			[
+				"wo",
+				"node_modules/postcss-modules-extract-imports/node_modules/postcss/lib/warn-once.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 262.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

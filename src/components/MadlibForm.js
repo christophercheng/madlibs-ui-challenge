@@ -1,147 +1,92 @@
 import React, { Component } from 'react';
-const regex = /%&(.*?)&%/gi;
+import FilledMadlib from './FilledMadlib';
+import UnfilledMadlib from './UnfilledMadlib';
+import './MadlibForm.css';
 
-class MadlibForm extends Component {
+class MadlibForm extends Component { //eslint-disable-line
   state = this.getInitialState();
 
   getInitialState() {
+    const fields = this.getFormFieldsFromMadlibText();
     return {
-      fields: this.getFormFieldsFromMadlib(),
-      userInput: {},
-      submitted: false
+      fields,
+      userValues: [],
+      submitted: false,
+      started: false,
     };
-  };
+  }
 
-  getFormFieldsFromMadlib() {
+  getFormFieldsFromMadlibText() {
     const fields = [];
-    let result = regex.exec(this.props.madlib);
+    const { inputRegex } = this.props;
+    let result = inputRegex.exec(this.props.madlib);
     while (result) {
-      // null represents value before user input
       fields.push(result[1]);
-      result = regex.exec(this.props.madlib);
+      result = inputRegex.exec(this.props.madlib);
     }
     return fields;
-  };
+  }
 
-  initializeMadlibForm() {
-    this.setState(this.getInitialState());
-  };
+  updateUserValues = (index, value) => {
+    this.setState((prevState) => {
+      const userValues = [...prevState.userValues];
+      userValues[index] = value;
+      return ({
+        userValues,
+      });
+    });
+  }
 
-  submitDisabled() {
-    const {fields, userInput} = this.state;
-      // submit disabled if not all fields have been touched
-    if (Object.keys(userInput).length !== fields.length) return true;
-    const errorMessages = this.getErrorMessages();
-    return Object.keys(errorMessages).filter(field => errorMessages[field].length).length;
-  };
+  renderMadlibForm = () => {
+    const newProps = {
+      fields: this.state.fields,
+      userValues: this.state.userValues,
+      updateUserValues: this.updateUserValues,
+      onSubmit: () => {
+        this.setState({ submitted: true });
+      },
+    };
+    return <UnfilledMadlib {...newProps} />;
+  }
 
-  validateField(fieldName, value) {
-    const errors = [];
 
-    // default validation: value cannot be blank.
-    if (!value) {
-      errors.push(
-        'Field cannot be blank'
-      );
-    }
+  renderMadlibResults = () => {
+    const newProps = {
+      fields: this.state.fields,
+      userValues: this.state.userValues,
+      madlib: this.props.madlib,
+      inputRegex: this.props.inputRegex,
+      resetMadlibForm: () => {
+        this.setState({ ...this.getInitialState(), started: true });
+      },
+    };
+    return <FilledMadlib {...newProps} />;
+  }
 
-    return errors;
-  };
+  renderHeader = () => (
+    <header
+      onClick={() => !this.state.started && this.setState({ started: true })}
+      className={this.state.started ? 'header-started' : 'header-not-started'}
+    >
+      Flocabular Madlib
+      {!this.state.started &&
+        <div className="sub-header">
+          Fill out the form to create your madlib
+        </div>
+      }
+    </header>
+  );
 
-  getErrorMessages() {
-    const {userInput} = this.state;
-    return Object.keys(userInput).reduce(
-      (errors, fieldName) => Object.assign(
-        errors,
-        {[fieldName]: this.validateField(fieldName, userInput[fieldName])}
-      ),
-      {}
-    );
-  };
-
-  renderMadlibForm() {
-    const {fields, userInput} = this.state;
-    const errorMessages = this.getErrorMessages();
+  render = () => {
+    const { submitted, started } = this.state;
     return (
-      <div className='madlib-form'>
-        <h2>Fill out the form below to create your madlib</h2>
-        <form onSubmit={e => this.setState({submitted: true})}>
-          {
-            fields.map(
-              (field, index) => (
-                <div key={index}>
-                  <label>
-                    {field}: <input
-                      value={userInput[field] || ''}
-                      onChange={
-                        e => this.setState({
-                          userInput: Object.assign(userInput, {[field]: e.target.value}),
-                        }, this.setErrorMessages)
-                      }
-                    />
-                  </label>
-                  {
-                    errorMessages[field] && errorMessages[field].map(
-                      error => error && (
-                        <span key={error} className='error'>
-                          {error}
-                        </span>
-                      )
-                    )
-                  }
-                </div>
-              )
-            )
-          }
-          <button type='submit' disabled={this.submitDisabled()}>submit</button>
-        </form>
-      </div>
-    );
-  };
-
-  renderFilledInMadlib() {
-    const {fields} = this.state;
-    const {madlib} = this.props;
-    return (
-      <div className='madlib-filled-in'>
-        {
-          madlib.split('\n').map(
-            (line, index1) => (
-              <span
-                key={index1}
-                className='madlib-line'
-              >
-                {
-                  line.split(regex).map(
-                    (chunk, index2) => (
-                      <span
-                        key={index2}
-                        className={
-                          fields[chunk]
-                          ? 'user-submitted-value'
-                          : ''
-                        }
-                      >
-                        {fields[chunk] || chunk}
-                      </span>
-                    )
-                  )
-                }
-              </span>
-            )
-          )
+      <div className="madlib-form">
+        {this.renderHeader()}
+        {submitted
+          ? this.renderMadlibResults()
+          : started && this.renderMadlibForm()
         }
-        <button onClick={e => this.initializeMadlibForm()}>start over</button>
       </div>
-    )
-  };
-
-  render() {
-    const {submitted} = this.state;
-    return (
-      submitted
-      ? this.renderFilledInMadlib()
-      : this.renderMadlibForm()
     );
   }
 }

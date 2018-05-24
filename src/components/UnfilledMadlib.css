@@ -1,0 +1,8 @@
+.field-editable {
+  font-size: 30px;
+}
+
+.field-non-editable {
+  font-size:20px;
+  color: grey;
+}

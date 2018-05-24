@@ -1,17 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import MADLIB_TEXT from './madlibs/bill-of-rights';
 import MadlibForm from './components/MadlibForm';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>Flocabulary Mad Libs!</h1>
-        <MadlibForm madlib={MADLIB_TEXT} />
-      </div>
-    );
-  }
-}
+const REGEX = /%&(.*?)&%/gi;
+
+const App = () => <MadlibForm madlib={MADLIB_TEXT} inputRegex={REGEX} />;
 
 export default App;
