@@ -3,7 +3,7 @@ import FilledMadlib from './FilledMadlib';
 import UnfilledMadlib from './UnfilledMadlib';
 import './MadlibForm.css';
 
-class MadlibForm extends Component { //eslint-disable-line
+export default class extends Component { //eslint-disable-line
   state = this.getInitialState();
 
   getInitialState() {
@@ -37,7 +37,21 @@ class MadlibForm extends Component { //eslint-disable-line
     });
   }
 
-  renderMadlibForm = () => {
+  renderHeader = () => (
+    <header
+      onClick={() => !this.state.started && this.setState({ started: true })}
+      className={this.state.started ? 'header-started' : 'header-not-started'}
+    >
+      Flocabulary Madlib
+      {!this.state.started &&
+        <div className="sub-header">
+          Fill out the form to create your madlib
+        </div>
+      }
+    </header>
+  );
+
+  renderForm = () => {
     const newProps = {
       fields: this.state.fields,
       userValues: this.state.userValues,
@@ -49,8 +63,7 @@ class MadlibForm extends Component { //eslint-disable-line
     return <UnfilledMadlib {...newProps} />;
   }
 
-
-  renderMadlibResults = () => {
+  renderResults = () => {
     const newProps = {
       fields: this.state.fields,
       userValues: this.state.userValues,
@@ -63,32 +76,13 @@ class MadlibForm extends Component { //eslint-disable-line
     return <FilledMadlib {...newProps} />;
   }
 
-  renderHeader = () => (
-    <header
-      onClick={() => !this.state.started && this.setState({ started: true })}
-      className={this.state.started ? 'header-started' : 'header-not-started'}
-    >
-      Flocabular Madlib
-      {!this.state.started &&
-        <div className="sub-header">
-          Fill out the form to create your madlib
-        </div>
+  render = () => (
+    <div className="madlib-form">
+      {this.renderHeader()}
+      {this.state.submitted
+        ? this.renderResults()
+        : this.state.started && this.renderForm()
       }
-    </header>
+    </div>
   );
-
-  render = () => {
-    const { submitted, started } = this.state;
-    return (
-      <div className="madlib-form">
-        {this.renderHeader()}
-        {submitted
-          ? this.renderMadlibResults()
-          : started && this.renderMadlibForm()
-        }
-      </div>
-    );
-  }
 }
-
-export default MadlibForm;

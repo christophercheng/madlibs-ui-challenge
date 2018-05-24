@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-function inputFieldWrapper(WrappedComponent,
+export default (
+  WrappedComponent,
   dynamicValidator = () => true,
   notifyWhenUpdated,
-  submitValidator = () => '') {
-  return class extends Component {
+  submitValidator = () => '',
+) =>
+  class extends Component {
     static propTypes = {
       label: PropTypes.string,
       value: PropTypes.string,
@@ -18,11 +20,12 @@ function inputFieldWrapper(WrappedComponent,
       editable: true,
     };
 
-    constructor(props) {
+    constructor({ editable, ...props }) {
       super(props);
       this.state = {
         errorMessage: '',
         value: props.value,
+        editable,
       };
     }
 
@@ -52,41 +55,36 @@ function inputFieldWrapper(WrappedComponent,
     }
 
     submitValidate = (userInput) => {
-      let errorMessage = '';
-      if (userInput === '') {
-        errorMessage = 'Field cannot be blank';
-      } else {
-        errorMessage = submitValidator(userInput);
-        console.log('error msg: ', errorMessage);
-      }
+      const errorMessage = (userInput === '')
+        ? 'Field cannot be blank'
+        : submitValidator(userInput);
+
       if (errorMessage) {
         this.setState({ errorMessage });
         return false;
       }
+
       return true;
     }
 
-    editableRendering = () => {
-      const { editable, ...newProps } = this.props;
-      return (
-        <div>
-          <span>{this.props.label}: </span>&nbsp;
-          <WrappedComponent
-            {...newProps}
-            onChange={this.onChange}
-            onBlur={this.onChange}
-            onKeyPress={this.onKeyPress}
-            value={this.state.value}
-            ref={(input) => { this.input = input; }}
-          />
-          {this.state.errorMessage.length > 0 &&
-            <div class="field-error-msg">{this.state.errorMessage}</div>
-          }
-        </div>
-      );
-    }
+    renderEditableField = () => (
+      <div>
+        <span>{this.props.label}: </span>&nbsp;
+        <WrappedComponent
+          {...this.props}
+          onChange={this.onChange}
+          onBlur={this.onChange}
+          onKeyPress={this.onKeyPress}
+          value={this.state.value}
+          ref={(input) => { this.input = input; }}
+        />
+        {this.state.errorMessage.length > 0 &&
+          <div className="field-error-msg">{this.state.errorMessage}</div>
+        }
+      </div>
+    )
 
-    nonEditableRendering = () => (
+    renderNonEditableField = () => (
       <div>
         <span>{this.props.label}:</span>&nbsp;
         <span>{this.state.value}</span>
@@ -94,11 +92,8 @@ function inputFieldWrapper(WrappedComponent,
     )
 
     render = () => (
-      this.props.editable ?
-        this.editableRendering() :
-        this.nonEditableRendering()
+      this.state.editable
+        ? this.renderEditableField()
+        : this.renderNonEditableField()
     )
   };
-}
-
-export default inputFieldWrapper;

@@ -2,16 +2,10 @@ import React from 'react';
 import inputFieldWrapper from './inputFieldWrapper';
 import NumberPicker from './NumberPicker';
 
-const NumberInputField = (props) => {
+export default ({ notifyWhenUpdated, ...props }) => {
   const NewField = inputFieldWrapper(
     NumberPicker,
     undefined,
-    props.notifyWhenUpdated);
-  let { notifyWhenUpdated, ...newProps } = props;
-  newProps = {
-    ...newProps,
-  };
-  return <NewField {...newProps} />;
+    notifyWhenUpdated);
+  return <NewField {...props} />;
 };
-
-export default NumberInputField;

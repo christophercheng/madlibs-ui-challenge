@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
 
-const FilledMadlib = (props) => {
+export default (props) => {
   const {
     fields, userValues, madlib, inputRegex, resetMadlibForm,
   } = props;
@@ -27,6 +27,10 @@ const FilledMadlib = (props) => {
     );
   }
 
+  function isChunkUserField(chunk) {
+    return currentFieldCounter < fields.length && chunk === fields[currentFieldCounter];
+  }
+
   function processLine(line) {
     return (
       <div
@@ -36,7 +40,7 @@ const FilledMadlib = (props) => {
         {
           line.split(inputRegex).map(
             chunk => (
-              currentFieldCounter < fields.length && chunk === fields[currentFieldCounter] ?
+              isChunkUserField(chunk) ?
               createUserChunk(userValues[currentFieldCounter++]) : // eslint-disable-line
               createFormChunk(chunk)
             ),
@@ -51,9 +55,7 @@ const FilledMadlib = (props) => {
       {
         madlib.split('\n').map(line => processLine(line))
       }
-      <button onClick={resetMadlibForm}>start over</button>
+      <button onClick={resetMadlibForm}>Start over</button>
     </div>
   );
 };
-
-export default FilledMadlib;

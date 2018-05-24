@@ -5,6 +5,4 @@ import MadlibForm from './components/MadlibForm';
 
 const REGEX = /%&(.*?)&%/gi;
 
-const App = () => <MadlibForm madlib={MADLIB_TEXT} inputRegex={REGEX} />;
-
-export default App;
+export default () => <MadlibForm madlib={MADLIB_TEXT} inputRegex={REGEX} />;

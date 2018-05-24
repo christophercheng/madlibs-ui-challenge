@@ -3,15 +3,14 @@ import inputFieldWrapper from './inputFieldWrapper';
 
 const isAlphaNumericWords = value => value.match(/^[\w\- ]+$/);
 
-const TextInputField = (props) => {
-  const NewField = inputFieldWrapper('input', isAlphaNumericWords, props.notifyWhenUpdated);
-  let { notifyWhenUpdated, ...newProps } = props;
-  newProps = {
-    maxLength: 10,
-    ...newProps,
-    type: "text",
-  };
-  return <NewField {...newProps} />;
-};
+export default ({ notifyWhenUpdated, ...props }) => {
+  const NewField = inputFieldWrapper('input', isAlphaNumericWords, notifyWhenUpdated);
 
-export default TextInputField;
+  return (
+    <NewField
+      maxLength={10}
+      {...props}
+      type="text"
+    />
+  );
+};

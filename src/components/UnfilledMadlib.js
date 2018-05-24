@@ -5,17 +5,15 @@ import TextEndingInputField from './TextEndingInputField';
 import NumberInputField from './NumberInputField';
 import './UnfilledMadlib.css';
 
-const UnfilledMadLib = ({
+export default ({
   fields, userValues, onSubmit, updateUserValues,
 }) => {
-  function shouldDisableSubmit() {
-    if (userValues.length < fields.length) {
-      return true;
-    }
-    return false;
-  }
+  const shouldDisableSubmit = () => userValues.length < fields.length;
+  const fieldIsEditable = index => index === userValues.length;
+  const fieldIsViewable = index => index <= userValues.length;
+  const getUsersInput = index => (index < userValues.length) ? userValues[index] : ''; //eslint-disable-line
 
-  function inputFieldSelector(label) {
+  const inputFieldSelector = (label) => {
     if (label.toLowerCase() === 'number') {
       return NumberInputField;
     }
@@ -24,15 +22,8 @@ const UnfilledMadLib = ({
       return TextEndingInputField(label.substring(labelPrefix.length + 1));
     }
     return TextInputField;
-  }
+  };
 
-  function submitValidation() {
-    return true;
-  }
-
-  function fieldIsEditable(index) {
-    return index === userValues.length;
-  }
   return (
     <form onSubmit={onSubmit}>
       {fields.map(
@@ -42,13 +33,12 @@ const UnfilledMadLib = ({
             <div
               key={v4()}
               className={fieldIsEditable(index) ? 'field-editable' : 'field-non-editable'}
-
             >
-              { index <= userValues.length &&
+              { fieldIsViewable(index) &&
                 <InputField
                   key={v4()}
                   label={field}
-                  value={index < userValues.length ? userValues[index] : ''}
+                  value={getUsersInput(index)}
                   notifyWhenUpdated={value => updateUserValues(index, value)}
                   editable={fieldIsEditable(index)}
                 />
@@ -59,11 +49,9 @@ const UnfilledMadLib = ({
       )}
       {!shouldDisableSubmit() &&
         <button type="submit" disabled={shouldDisableSubmit()}>
-          submit
+          Make your madlib
         </button>
       }
     </form>
   );
 };
-
-export default UnfilledMadLib;

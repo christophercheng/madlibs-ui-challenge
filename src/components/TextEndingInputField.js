@@ -1,7 +1,7 @@
 import React from 'react';
 import inputFieldWrapper from './inputFieldWrapper';
 
-const TextEndingInputField = suffix => (props) => {
+export default suffix => ({ notifyWhenUpdated, ...props }) => {
   const isAlphaNumeric = value => value.match(/^[\w-]+$/);
   const submitValidator = (value) => {
     if (value.endsWith(suffix)) {
@@ -12,14 +12,13 @@ const TextEndingInputField = suffix => (props) => {
     }
     return `Field must end with ${suffix}`;
   };
-  const NewField = inputFieldWrapper('input', isAlphaNumeric, props.notifyWhenUpdated, submitValidator);
-  let { notifyWhenUpdated, ...newProps } = props;
-  newProps = {
-    maxLength: 10,
-    ...newProps,
-    type: "text",
-  };
-  return <NewField {...newProps} />;
-};
+  const NewField = inputFieldWrapper('input', isAlphaNumeric, notifyWhenUpdated, submitValidator);
 
-export default TextEndingInputField;
+  return (
+    <NewField
+      maxLength={10}
+      {...props}
+      type="text"
+    />
+  );
+};
