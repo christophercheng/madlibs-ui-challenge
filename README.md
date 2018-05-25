@@ -21,13 +21,22 @@ For layout, used CSS flex for the resulting madlib form.
 ### React High Level Component Design:
   
   MadlibForm
+  
   |
+  
   |----UnfilledMadlib
+  
   |
+  
   |----FilledMadlib
+  
        |
+       
        |----TextInputField, NumberInputField,TextEndingInputField
+       
              |
+            
+             
              |----InputFieldWrapper
              
              
