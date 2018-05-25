@@ -48,10 +48,11 @@ InputFIeldWrapper is an HOC component that takes any of the wrapped components (
 
 ### Issues
 
-The layout and overally visual appearance is limited to certain browsers and browser sizes.  To make this application production read, responsive design touchs must be applied e.g. media query adoptations.  
+The layout and overall visual appearance is limited to certain browsers and browser sizes.  To make this application production ready, responsive design touchs must be applied e.g. media query adoptations.  
 
 I had trouble figuring out how to visually transition a block element with a set width to a smaller width considering I didn't know the width of the block's contents.  This is apparent when you click 'enter' on a form field value.
-       
+
+Even though I'm using SASS, I still find CSS to be a giant mess.  On the positive side, I'm never using the important attribute.  And I've limited the use of any nested selectors (which is bad for CSS performance.  I've also not utilized BEM class naming structures which would be beneficial for a larger project.  Ideally, I'd like to look into using more modern React approaches to styling, such as styled components.  TBD for ME.
 
 ## Thank you for accepting Flocabulary's Front End Engineer challenge!
 
