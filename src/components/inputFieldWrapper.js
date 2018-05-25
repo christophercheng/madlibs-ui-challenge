@@ -71,7 +71,6 @@ export default (
         this.setState({ errorMessage });
         return false;
       }
-
       return true;
     }
 
