@@ -1,5 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './NumberPicker.css';
+
+const styleDeltaButtonStack = {
+  display: 'inline-block',
+  position: 'relative',
+  left: -15,
+  top: -5,
+};
+
+const styleDeltaButton = {
+  display: 'block',
+  background: 'transparent',
+  height: '14px',
+  width: '14px',
+  border: '0',
+  color: 'white',
+  fontWeight: 'bold',
+  fontSize: '12px',
+  cursor: 'pointer',
+};
+
+const styleAddButton = {
+  ...styleDeltaButton,
+
+};
+
+const styleMinusButton = {
+  ...styleDeltaButton,
+};
 
 class NumberPicker extends React.Component {
   static propTypes = {
@@ -11,7 +40,7 @@ class NumberPicker extends React.Component {
   static defaultProps = {
     value: '0',
     min: 0,
-    max: 99999,
+    max: 99,
   }
 
   componentDidMount() {
@@ -37,6 +66,7 @@ class NumberPicker extends React.Component {
       : (parseInt(this.props.value, 10) + intDelta);
     e.target.value = adjustedIntValue.toString();
     this.onChange(e);
+    this.input.focus();
   }
 
   render() {
@@ -48,8 +78,10 @@ class NumberPicker extends React.Component {
     return (
       <span>
         <input {...newProps} onChange={this.onChange} />
-        <button className="increment" onClick={e => this.intAdjustValue(e, 1)}>&and;</button>
-        <button className="decrement" onClick={e => this.intAdjustValue(e, -1)}> &or;</button>
+        <span style={styleDeltaButtonStack} >
+          <button style={styleAddButton} className="delta-button" onClick={e => this.intAdjustValue(e, 1)}>&and;</button>
+          <button style={styleMinusButton} className="delta-button" onClick={e => this.intAdjustValue(e, -1)}> &or;</button>
+        </span>
       </span>
     );
   }

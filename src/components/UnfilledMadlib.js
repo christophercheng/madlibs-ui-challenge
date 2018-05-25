@@ -24,22 +24,37 @@ export default ({
     return TextInputField;
   };
 
+  const setFocusOnSubmitButton = (button) => {
+    if (button && button.focus) {
+      button.focus();
+    }
+  };
+
+  const renderSubmitButton = () => (
+    <div className="submit-button">
+      <button ref={(button) => { setFocusOnSubmitButton(button); }} type="submit" disabled={shouldDisableSubmit()}>
+        Make your madlib
+      </button>
+    </div>
+  );
+
   return (
     <form onSubmit={onSubmit}>
+      <header className="form-header">Flocabulary Madlib</header>
       {fields.map(
         (field, index) => {
           const InputField = inputFieldSelector(field);
           return (
             <div
               key={v4()}
-              className={fieldIsEditable(index) ? 'field-editable' : 'field-non-editable'}
+              className={fieldIsEditable(index) ? 'field field-editable' : 'field field-non-editable'}
             >
               { fieldIsViewable(index) &&
                 <InputField
                   key={v4()}
                   label={field}
                   value={getUsersInput(index)}
-                  notifyWhenUpdated={value => updateUserValues(index, value)}
+                  notifyWhenUpdated={value => updateUserValues(index, value.toLowerCase())}
                   editable={fieldIsEditable(index)}
                 />
             }
@@ -47,11 +62,7 @@ export default ({
           );
         },
       )}
-      {!shouldDisableSubmit() &&
-        <button type="submit" disabled={shouldDisableSubmit()}>
-          Make your madlib
-        </button>
-      }
+      {!shouldDisableSubmit() && renderSubmitButton() }
     </form>
   );
 };

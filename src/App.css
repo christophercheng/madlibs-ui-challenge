@@ -1,16 +1,9 @@
 span.error {
-  color: red;
-}
+  color: red; }
 
 .madlib-line {
   display: block;
-  height: 20px;
-}
+  height: 20px; }
 
 .madlib-line.last-of-chunk + .madlib-line {
-  display: inline-block;
-}
-
-.user-submitted-value {
-  text-decoration: underline;
-}
+  display: inline-block; }

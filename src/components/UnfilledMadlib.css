@@ -1,8 +1,76 @@
+header.header-not-started {
+  font-size: 36px;
+  cursor: pointer; }
+
+header.header-started {
+  font-size: 24px;
+  color: #6FBF86; }
+
+.submitted .header-started {
+  position: absolute;
+  top: 20px;
+  color: #17AB5A; }
+
+header.header-started {
+  font-size: 24px;
+  color: #6FBF86; }
+
+header .sub-header {
+  margin-top: 15px;
+  font-size: 16px;
+  letter-spacing: 1px; }
+
+.madlib-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; }
+
+.madlib-form {
+  background-color: #17AB5A; }
+
+.madlib-form.submitted {
+  background-color: white;
+  color: black;
+  font-size: 11px;
+  font-weight: bold; }
+
+.field, .submit-button {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.form-header {
+  font-size: 24px;
+  color: #6FBF86;
+  text-align: center; }
+
+.form-line {
+  display: block;
+  height: 20px; }
+
+.madlib-line.last-of-chunk + .madlib-line {
+  display: inline-block; }
+
 .field-editable {
-  font-size: 30px;
-}
+  font-size: 36px;
+  margin-top: 15px; }
 
 .field-non-editable {
-  font-size:20px;
-  color: #6FBF86;
-}
+  font-size: 24px;
+  margin-top: 15px;
+  color: #6FBF86; }
+
+.submit-button {
+  margin-top: 35px; }
+
+.submit-button button {
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer; }

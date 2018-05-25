@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import './FilledMadlib.css';
 
 export default (props) => {
   const {
@@ -11,7 +12,7 @@ export default (props) => {
   function createFormChunk(chunk) {
     return (
       <span key={v4()}>
-        {chunk}
+        {chunk || `${String.fromCharCode(160)}`}
       </span>
     );
   }
@@ -28,14 +29,15 @@ export default (props) => {
   }
 
   function isChunkUserField(chunk) {
-    return currentFieldCounter < fields.length && chunk === fields[currentFieldCounter];
+    const lowercaseChunk = chunk.toLowerCase();
+    return currentFieldCounter < userValues.length && lowercaseChunk === fields[currentFieldCounter].toLowerCase();
   }
 
   function processLine(line) {
     return (
       <div
         key={v4()}
-        className="madlib-line"
+        className="form-line"
       >
         {
           line.split(inputRegex).map(
@@ -52,10 +54,16 @@ export default (props) => {
 
   return (
     <div className="madlib-filled-in">
-      {
-        madlib.split('\n').map(line => processLine(line))
-      }
-      <button onClick={resetMadlibForm}>Start over</button>
+      <header className="header-result-page">
+
+        Flocabulary Madlib
+        <button className="button-reset" onClick={resetMadlibForm}>Start over</button>
+      </header>
+      <section className="content-container">
+        {
+          madlib.split('\n').map(line => processLine(line))
+        }
+      </section>
     </div>
   );
 };

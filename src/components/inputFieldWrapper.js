@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './inputFieldWrapper.css';
 
 export default (
   WrappedComponent,
@@ -26,6 +27,7 @@ export default (
         errorMessage: '',
         value: props.value,
         editable,
+        transitioningToNonEdit: false,
       };
     }
 
@@ -49,10 +51,13 @@ export default (
 
     onKeyPress = (e) => {
       if (e.key === 'Enter') {
+        e.preventDefault();
         if (this.submitValidate(e.target.value)) {
-          notifyWhenUpdated(e.target.value);
-        } else {
-          e.preventDefault();
+          const updatedValue = e.target.value;
+          this.setState({
+            transitioningToNonEdit: true,
+          });
+          setTimeout(() => notifyWhenUpdated(updatedValue), 1050);
         }
       }
     }
@@ -71,25 +76,32 @@ export default (
     }
 
     renderEditableField = () => (
-      <div>
-        <span>{this.props.label}: </span>&nbsp;
+      <div
+        className={
+          this.state.transitioningToNonEdit
+            ? "editable-field-wrapper transitionOut"
+            : "editable-field-wrapper".concat(this.state.errorMessage && " error")}
+      >
+        <span>{this.props.label}: </span>
         <WrappedComponent
+          className={"field-input-element".concat(this.state.errorMessage && " shake")}
           {...this.props}
           onChange={this.onChange}
           onBlur={this.onChange}
           onKeyPress={this.onKeyPress}
           value={this.state.value}
           ref={(input) => { this.input = input; }}
+          readonly={this.state.transitioningToNonEdit ? "true" : null}
         />
-        {this.state.errorMessage.length > 0 &&
+        {this.state.errorMessage &&
           <div className="field-error-msg">{this.state.errorMessage}</div>
         }
       </div>
     )
 
     renderNonEditableField = () => (
-      <div>
-        <span>{this.props.label}:</span>&nbsp;
+      <div className="field">
+        <span className="label">{this.props.label}:</span>
         <span>{this.state.value}</span>
       </div>
     )

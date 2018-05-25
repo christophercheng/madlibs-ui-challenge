@@ -4,6 +4,7 @@ import inputFieldWrapper from './inputFieldWrapper';
 export default suffix => ({ notifyWhenUpdated, ...props }) => {
   const isAlphaNumeric = value => value.match(/^[\w-]+$/);
   const submitValidator = (value) => {
+    value=value.toLowerCase();
     if (value.endsWith(suffix)) {
       if (value.length > suffix.length) {
         return '';
@@ -16,7 +17,7 @@ export default suffix => ({ notifyWhenUpdated, ...props }) => {
 
   return (
     <NewField
-      maxLength={10}
+      maxLength={8}
       {...props}
       type="text"
     />

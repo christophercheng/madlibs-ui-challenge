@@ -7,5 +7,5 @@ export default ({ notifyWhenUpdated, ...props }) => {
     NumberPicker,
     undefined,
     notifyWhenUpdated);
-  return <NewField {...props} />;
+  return <NewField {...props} className="field-input-element number-input-element" />;
 };

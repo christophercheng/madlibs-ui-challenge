@@ -4,12 +4,7 @@ import UnfilledMadlib from './UnfilledMadlib';
 import './MadlibForm.css';
 
 export default class extends Component {
-  state = {
-    fields: this.getFormFieldsFromMadlibText(),
-    userValues: [],
-    submitted: false,
-    started: false,
-  };
+  state = this.setInitialState();
 
   getFormFieldsFromMadlibText() {
     function capitalizate(string) {
@@ -25,6 +20,15 @@ export default class extends Component {
     return fields;
   }
 
+  setInitialState() {
+    return ({
+      fields: this.getFormFieldsFromMadlibText(),
+      userValues: [],
+      submitted: false,
+      started: false,
+    });
+  }
+
   updateUserValues = (index, value) => {
     this.setState((prevState) => {
       const userValues = [...prevState.userValues];
@@ -35,17 +39,13 @@ export default class extends Component {
     });
   }
 
-  renderHeader = () => (
+  renderCoverPage = () => (
     <header
-      onClick={() => !this.state.started && this.setState({ started: true })}
-      className={this.state.started ? 'header-started' : 'header-not-started'}
+      onClick={() => this.setState({ started: true })}
+      className="header-not-started"
     >
       Flocabulary Madlib
-      {!this.state.started &&
-        <div className="sub-header">
-          Fill out the form to create your madlib
-        </div>
-      }
+      <div className="sub-header">Fill out the form to create your madlib</div>
     </header>
   )
 
@@ -68,19 +68,20 @@ export default class extends Component {
       madlib: this.props.madlib,
       inputRegex: this.props.inputRegex,
       resetMadlibForm: () => {
-        this.setState({ ...this.getInitialState(), started: true });
+        this.setState({ ...this.setInitialState(), started: false });
       },
     };
     return <FilledMadlib {...newProps} />;
   }
 
-  render = () => (
-    <div className="madlib-form">
-      {this.renderHeader()}
-      {this.state.submitted
-        ? this.renderResults()
-        : this.state.started && this.renderForm()
-      }
-    </div>
-  );
+  render = () => {
+    const { started, submitted } = this.state;
+    return (
+      <div className={"madlib-form ".concat(`${this.state.submitted && "submitted"}`)}>
+        {!started && this.renderCoverPage()}
+        {started && !submitted && this.renderForm()}
+        {started && submitted && this.renderResults()}
+      </div>
+    );
+  }
 }
