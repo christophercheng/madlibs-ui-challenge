@@ -1,0 +1,53 @@
+@import './MadlibForm.scss';
+
+%centered-field {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-header {
+  font-size: $non-editable-font-size;
+  color: $non-editable-color;
+  text-align: center;
+
+}
+
+.form-line {
+  display: block;
+  height: 20px;
+}
+
+.madlib-line.last-of-chunk + .madlib-line {
+  display: inline-block;
+}
+
+.field {
+  @extend %centered-field;
+}
+
+.field-editable {
+  font-size: $editable-font-size;
+  margin-top: $editable-margin-top;
+
+}
+
+.field-non-editable {
+  font-size:$non-editable-font-size;
+  margin-top: $non-editable-margin-top;
+  color: $non-editable-color;
+}
+
+.submit-button {
+  @extend %centered-field;
+  margin-top: $submit-button-top;
+}
+
+.submit-button button {
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+}

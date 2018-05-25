@@ -1,0 +1,59 @@
+$non-editable-color: #6FBF86;
+$editable-color: white;
+$non-editable-font-size: 24px;
+$editable-font-size: 36px;
+$editable-margin-top: 15px;
+$non-editable-margin-top: 15px;
+$submit-button-top: 35px;
+$text-input-width: 170px;
+$number-input-width:60px;
+$main-site-green: #17AB5A;
+$result-page-header-top: 20px;
+
+header.header-not-started {
+  font-size: $editable-font-size;
+  cursor: pointer;
+}
+
+header.header-started {
+  font-size:$non-editable-font-size;
+  color: $non-editable-color;
+}
+
+.submitted .header-started {
+  position: absolute;
+  top: $result-page-header-top;
+  color: $main-site-green;
+}
+
+header.header-started {
+  font-size:$non-editable-font-size;
+  color: $non-editable-color;
+}
+
+header .sub-header {
+  margin-top:$non-editable-margin-top;
+  font-size:16px;
+  letter-spacing: 1px;
+}
+
+.madlib-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.madlib-form {
+  background-color: $main-site-green;
+}
+
+.madlib-form.submitted {
+  background-color: white;
+  color: black;
+  font-size:11px;
+  font-weight: bold;
+}
