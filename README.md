@@ -55,6 +55,12 @@ The UnfilledMadlib component houses the form and all the user inputs.  The Fille
 
 InputFIeldWrapper is an HOC component that takes any of the wrapped components (e.g. TextInputField) and renders the wrapped component with a set of event handling props such as onChange or onSubmit, etc.
 
+TextEndingInputField is a slight modification of the TextInputField.  It adds a validation routine that is called when the user is done with the input.  It checks to see that the inputted value contains a particular suffix.
+
+NumberInputField limits a user to numeric integer values.  It can be configured with min and max values. It utilizes a custom input sub-component, NumberPicker.
+
+NumberPicker has spinner buttons to increment or decrement the input number within the configured range.
+
 ### Issues
 
 The layout and overall visual appearance is limited to certain browsers and browser sizes.  To make this application production ready, responsive design touchs must be applied e.g. media query adoptations.  
