@@ -56,7 +56,7 @@ The UnfilledMadlib component houses the form and all the user inputs.  The Fille
 InputFIeldWrapper is an HOC component that takes any of the wrapped components (e.g. TextInputField) and renders the wrapped component with a set of event handling props such as onChange or onSubmit, etc.  
 
 Components that wish to utilize the InputFieldWrapper must provide the following:
-- an 'input' element such as a text box implementation
+- an 'input' component that receives user's input, e.g. the input component or a custom input component
 - a callback routine that accepts the user's submitteddata
 - an optional dynamic validation routine that is called each time a user enters data
 - an optional submit validation that is only called when a user has completed entering data,
