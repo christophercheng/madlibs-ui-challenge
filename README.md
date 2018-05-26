@@ -58,8 +58,8 @@ InputFIeldWrapper is an HOC component that takes any of the wrapped components (
 Components that wish to utilize the InputFieldWrapper must provide the following:
 - an 'input' element such as a text box implementation
 - a callback routine that accepts the user's submitteddata
-- * an optional dynamic validation routine that is called each time a user enters data
-- * an optional submit validation that is only called when a user has completed entering data,
+- an optional dynamic validation routine that is called each time a user enters data
+- an optional submit validation that is only called when a user has completed entering data,
 
 TextEndingInputField is a slight modification of the TextInputField.  It adds a validation routine that is called when the user is done with the input.  It checks to see that the inputted value contains a particular suffix.
 
