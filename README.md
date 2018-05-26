@@ -71,6 +71,5 @@ Even though I'm using SASS, I still find CSS to be a giant mess.  On the positiv
 2. Clone forked repo to local folder
 3. In same directory as `package.json`, run `npm install`
 4. To start development server, run `npm start`
-5. To submit your challenge push your updates to your forked repo
 
 This was made with [create react app](https://github.com/facebook/create-react-app).
