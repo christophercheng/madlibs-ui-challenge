@@ -33,20 +33,20 @@ For layout, used CSS flex for the resulting madlib form.
   
   |
   
-  |----UnfilledMadlib
+  |---- FilledMadlib
   
   |
   
-  |----FilledMadlib
+  |---- UnfilledMadlib
   
        |
        
-       |----TextInputField, NumberInputField,TextEndingInputField
+       |---- TextInputField, TextEndingInputField, NumberInputField
        
-             |
-            
+             |                                    |---- NumberPicker
+                                              
              
-             |----InputFieldWrapper
+             |---- InputFieldWrapper
              
              
 MadLibForm is the main app component.  based on the state of the application, it renders either an UnfilledMadlib Component or a FilledMadlib component.
