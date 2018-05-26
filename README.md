@@ -53,7 +53,13 @@ MadLibForm is the main app component.  based on the state of the application, it
 
 The UnfilledMadlib component houses the form and all the user inputs.  The FilledMadlib component houses the results page.
 
-InputFIeldWrapper is an HOC component that takes any of the wrapped components (e.g. TextInputField) and renders the wrapped component with a set of event handling props such as onChange or onSubmit, etc.
+InputFIeldWrapper is an HOC component that takes any of the wrapped components (e.g. TextInputField) and renders the wrapped component with a set of event handling props such as onChange or onSubmit, etc.  
+
+Components that wish to utilize the InputFieldWrapper must provide the following:
+1 an 'input' element such as a text box implementation
+2 a callback routine that accepts the user's submitteddata
+3* an optional dynamic validation routine that is called each time a user enters data
+4* an optional submit validation that is only called when a user has completed entering data,
 
 TextEndingInputField is a slight modification of the TextInputField.  It adds a validation routine that is called when the user is done with the input.  It checks to see that the inputted value contains a particular suffix.
 
