@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"transi",
+				"transitioningToNonEdit"
+			],
+			[
+				"trna",
+				"transitioningToNonEdit"
+			],
+			[
+				"tran",
+				"transitionOutOfEdit"
+			],
+			[
+				"fied",
+				"fieldWrapper"
+			],
+			[
+				"non-",
+				"non-editable-font-size"
+			],
+			[
+				"field-inpu",
+				"field-input-element-defaults"
+			],
+			[
+				"editable",
+				"editable-field-wrapper"
+			],
+			[
+				"field",
+				"field-input-element-defaults"
+			],
+			[
+				"styleDel",
+				"styleDeltaButtonStack"
+			],
+			[
+				"non-ei",
+				"non-editable-size"
+			],
+			[
+				"inp",
+				"inputFieldWrapper"
+			],
+			[
+				"get",
+				"getFormFieldsFromMadlibText"
+			],
+			[
+				"render",
+				"renderEditableField"
+			],
+			[
+				"Number",
+				"NumberInputField"
+			],
+			[
 				"direct",
 				"directoryData"
 			],
@@ -452,25 +508,57 @@
 	"buffers":
 	[
 		{
-			"contents": "import React, { Component } from 'react';\nimport logo from './logo.svg';\nimport './App.css';\n\n// eslint-disable-next-line\nclass App extends Component {\n  render() {\n    return (\n      <div className=\"App\">\n        <header className=\"App-header\">\n          <img src={logo} className=\"App-logo\" alt=\"logo\" />\n          <h1 className=\"App-title\">Welcome to React</h1>\n        </header>\n        <p className=\"App-intro\">\n          To get started, edit <code>src/App.js</code> and save to reload.\n        </p>\n      </div>\n    );\n  }\n}\n\nexport default App;\n",
-			"file": "/Users/ccheng/Dev/react/interviews/clevertech/src/App.js",
-			"file_size": 578,
-			"file_write_time": 131713878704461927,
+			"file": "src/components/__tests__/NumberPicker.test.js",
 			"settings":
 			{
-				"buffer_size": 552,
+				"buffer_size": 760,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Package Control Messages\n========================\n\nSublimeLinter\n-------------\n\n  SublimeLinter 4.6\n  =================\n  \n  You can now set \"lint_mode\" per linter.\n  \n  If you have \"background\" as your default mode, this new setting allows you\n  to run some linters only on save, or manually.\n  \n  http://www.sublimelinter.com/en/stable/linter_settings.html\n",
+			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 359,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
+				"buffer_size": 1174,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/inputFieldWrapper.js",
+			"settings":
+			{
+				"buffer_size": 3051,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/NumberPicker.js",
+			"settings":
+			{
+				"buffer_size": 1996,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import React from 'react';\nimport { v4 } from 'uuid';\nimport TextInputField from './TextInputField';\nimport TextEndingInputField from './TextEndingInputField';\nimport NumberInputField from './NumberInputField';\nimport './UnfilledMadlib.css';\n\nexport default ({\n  fields, userValues, onSubmit, updateUserValues,\n}) => {\n  const shouldDisableSubmit = () => userValues.length < fields.length;\n  const fieldIsEditable = index => index === userValues.length;\n  const fieldIsViewable = index => index <= userValues.length;\n  const getUsersInput = index => (index < userValues.length) ? userValues[index] : ''; //eslint-disable-line\n\n  const inputFieldSelector = (label) => {\n    if (label.toLowerCase() === 'number') {\n      return NumberInputField;\n    }\n    const labelPrefix = 'word ending with';\n    if (label.toLowerCase().startsWith(labelPrefix)) {\n      return TextEndingInputField(label.substring(labelPrefix.length + 1));\n    }\n    return TextInputField;\n  };\n\n  const setFocusOnSubmitButton = (button) => {\n    if (button && button.focus) {\n      button.focus();\n    }\n  };\n     \n  const renderSubmitButton = () => (\n    <div className=\"submit-button\">\n      <button ref={(button) => { setFocusOnSubmitButton(button); }} type=\"submit\" disabled={shouldDisableSubmit()}>\n        Make your madlib\n      </button>\n    </div>\n  );\n\n  return (\n    <form onSubmit={onSubmit}>\n      <header className=\"form-header\">Flocabulary Madlib</header>\n      {fields.map(\n        (field, index) => {\n          const InputField = inputFieldSelector(field);\n          return (\n            <div\n              key={v4()}\n              className={fieldIsEditable(index) ? 'field field-editable' : 'field field-non-editable'}\n            >\n              { fieldIsViewable(index) &&\n                <InputField\n                  key={v4()}\n                  label={field}\n                  value={getUsersInput(index)}\n                  notifyWhenUpdated={value => updateUserValues(index, value.toLowerCase())}\n                  editable={fieldIsEditable(index)}\n                />\n            }\n            </div>\n          );\n        },\n      )}\n      {!shouldDisableSubmit() && renderSubmitButton() }\n    </form>\n  );\n};\n",
+			"file": "src/components/UnfilledMadlib.js",
+			"file_size": 2198,
+			"file_write_time": 131717130818832440,
+			"settings":
+			{
+				"buffer_size": 2203,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/TextEndingInputField.js",
+			"settings":
+			{
+				"buffer_size": 662,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -547,10 +635,42 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge"
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/madlibs"
 	],
 	"file_history":
 	[
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/NumberPicker.test.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/madlibs/bill-of-rights.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/MadlibForm.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/App.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/UnfilledMadlib.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/App.scss",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/FilledMadlib.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/FilledMadlib.css",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/TextEndingInputField.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/NumberInputField.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/NumberPicker.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/MadlibForm.scss",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/UnfilledMadlib.scss",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/FilledMadlib.scss",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/index.scss",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/inputFieldWrapper.scss",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/package.json",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/NumberPicker.scss",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/registerServiceWorker.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/inputFieldWrapper.css",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/UnfilledMadlib.css",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/MadlibForm.css",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/OldMadlibForm.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/TextInputField.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/index.css",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/inputFieldWrapper.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/index.js",
+		"/Users/ccheng/Dev/react/interviews/madlibs-ui-challenge/src/components/FilledInMadlib.js",
+		"/Users/ccheng/Dev/react/interviews/clevertech/src/App.js",
 		"/Users/ccheng/Dev/javascript/hackerrank/test.js",
 		"/Users/ccheng/Dev/react/hyperscience/src/fetchData.js",
 		"/Users/ccheng/Dev/react/hyperscience/src/App.js",
@@ -649,40 +769,11 @@
 		"/Users/ccheng/Dev/react-native/foodorder/src/components/CredentialsWidget.js",
 		"/Users/ccheng/Dev/react-native/foodorder/src/components/SignOutButton.js",
 		"/Users/ccheng/Dev/react-native/foodorder/src/components/screens/untitled",
-		"/Users/ccheng/Dev/react-native/foodorder/src/tools/PriceConversion.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCatPage.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCatListPage.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerItemPage.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCartPage.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/MenuScreen.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/AuthLoadingScreen.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/CartPage.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/CatPage.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/CatList.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/store/reducers/reducerMains.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/store/reducers/reducerCategories.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/PasswordInput.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/PhoneInput.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/containers/containerCatList.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/components/ItemPage.js",
-		"/Users/ccheng/Dev/react-native/foodorder/src/configureStore.js",
-		"/Users/ccheng/Dev/react-native/foodshop/Notifications.js",
-		"/Users/ccheng/Dev/react-native/foodshop/SettingsScreen.js",
-		"/Users/ccheng/Dev/react-native/foodshop/DetailsScreen.js",
-		"/Users/ccheng/Dev/react-native/foodshop/App_old.js",
-		"/Users/ccheng/Dev/react-native/foodshop/HomeScreen.js",
-		"/Users/ccheng/Dev/react-native/foodshop/ModalButton.js",
-		"/Users/ccheng/Dev/react-native/foodshop/ModalScreen.js",
-		"/Users/ccheng/Dev/react-native/foodshop/LogoTitle.js",
-		"/Users/ccheng/Dev/react-native/foodshop/App.js",
-		"/Users/ccheng/Dev/react-native/foodshop/App.test.js",
-		"/Users/ccheng/Dev/react-native/foodshop/package.json",
-		"/Users/ccheng/Dev/react-native/foodshop/app.json",
-		"/Users/ccheng/Downloads/RecoveryFiles/RecoveryFiles/Development/django/tr/tennis_rungs.py"
+		"/Users/ccheng/Dev/react-native/foodorder/src/tools/PriceConversion.js"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -696,6 +787,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"setfocusonsubmitbutton",
+			"background-gre",
+			"red",
+			"editable",
+			"console.log",
+			"3px",
+			"editable",
+			"errormessages",
+			"geterrormessages",
+			"renderfilledinmadlib",
+			"submitted",
+			"};\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -718,31 +821,187 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/Users/ccheng/Dev/react/interviews/clevertech/src/App.js",
+					"file": "src/components/__tests__/NumberPicker.test.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 552,
+						"buffer_size": 760,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								144,
-								144
+								760,
+								760
 							]
 						],
 						"settings":
 						{
+							"SL.108.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
 							"SL.14.region_keys":
 							[
 							],
-							"SL.24.region_keys":
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1174,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								"SL.eslint.Highlights.|39ecf6a82ab82979eed67a533a3878db69ae7b205e630be4ecea5df59c3df0da|region.redish markup.error.sublime_linter|32",
-								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								1144,
+								1144
+							]
+						],
+						"settings":
+						{
+							"SL.109.region_keys":
+							[
+							],
+							"SL.15.region_keys":
+							[
+							],
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "src/components/inputFieldWrapper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3051,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1192,
+								1192
+							]
+						],
+						"settings":
+						{
+							"SL.16.region_keys":
+							[
+							],
+							"SL.36.region_keys":
+							[
 								"sublime_linter.protected_regions"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 651.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/components/NumberPicker.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1996,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1159,
+								1159
+							]
+						],
+						"settings":
+						{
+							"SL.106.region_keys":
+							[
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"sublime_linter.protected_regions",
+								"SL.eslint.Highlights.|fa05390bb1c9d8306d92494d9842cdd98fcc46615ba9f236a69c4bbb128c1aa9|region.redish markup.error.sublime_linter|32"
+							],
+							"SL.17.region_keys":
+							[
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/components/UnfilledMadlib.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1181,
+								1181
+							]
+						],
+						"settings":
+						{
+							"SL.18.region_keys":
+							[
+							],
+							"SL.20.region_keys":
+							[
+								"sublime_linter.protected_regions",
+								"SL.eslint.Highlights.|b916190b1fa8edfee74d1b05c55eaf962fe09ed01add5ad0df123fe2306bbc90|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"SL.eslint.Highlights.|db9b496d0b6b6a06c0dd71ba50aeca3393f4a1cbc5e72f6e7ba9a55269958b57|region.redish markup.error.sublime_linter|32"
 							],
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
@@ -756,30 +1015,41 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"semi_transient": false,
+					"buffer": 5,
+					"file": "src/components/TextEndingInputField.js",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 359,
+						"buffer_size": 662,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								359,
-								359
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"SL.17.region_keys":
+							"SL.19.region_keys":
 							[
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"SL.eslint.Highlights.|8340485734f5e52a3d9afa4f6c763826c1f6700c0ca1e6770c9079ec9dabbbaa|region.redish markup.error.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.eslint.Highlights.|be148da778eea57b9aa1cf4894a1b5be0b27180a8400a27efc5b8963681fe401|region.redish markup.error.sublime_linter|32"
 							],
-							"auto_indent": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
+							"SL.28.region_keys":
+							[
+								"SL.eslint.Highlights.|be148da778eea57b9aa1cf4894a1b5be0b27180a8400a27efc5b8963681fe401|region.redish markup.error.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.eslint.Highlights.|8340485734f5e52a3d9afa4f6c763826c1f6700c0ca1e6770c9079ec9dabbbaa|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot"
+							],
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -788,31 +1058,6 @@
 					"stack_index": 0,
 					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"sheets":
-			[
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -839,43 +1084,17 @@
 				0,
 				2,
 				1
-			],
-			[
-				2,
-				0,
-				3,
-				1
-			],
-			[
-				0,
-				1,
-				1,
-				2
-			],
-			[
-				1,
-				1,
-				2,
-				2
-			],
-			[
-				2,
-				1,
-				3,
-				2
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.33333333,
-			0.66666666,
+			0.5,
 			1.0
 		],
 		"rows":
 		[
 			0.0,
-			0.5,
 			1.0
 		]
 	},
@@ -942,7 +1161,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
@@ -950,7 +1169,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 262.0,
+	"side_bar_width": 290.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
