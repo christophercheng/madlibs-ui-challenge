@@ -78,6 +78,8 @@ I had trouble figuring out how to visually transition a block element with a set
 
 Even though I'm using SASS, I still find CSS to be a giant mess.  On the positive side, I'm never using the important attribute.  And I've limited the use of any nested selectors (which is bad for CSS performance.  I've also not utilized BEM class naming structures which would be beneficial for a larger project.  Ideally, I'd like to look into using more modern React approaches to styling, such as styled components.  TBD for ME.
 
+On the feature side, there is no validation for the actual validity of the inputted words.  Integration from a third party dictionary api service would help to address this issue.  This validation check would require an async call to the third party service to check if the user's input is an actual word. The UI would have to be frozen while waiting for a validity response.  A timeout would also need to be implemented in case the dictionary api service was not responding quick enough.
+
 
 ### Installation Directions
 
