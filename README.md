@@ -1,3 +1,12 @@
+# Overview
+
+This is a demonstration of a dynamic form that renders a single input at a time.  Such forms focus a user's attention on a single task at hand and can be optimal for certain use cases.
+
+This app was built with React, Javascript & Sass.
+
+The application is a mock simulation of a Madlib game:
+https://en.wikipedia.org/wiki/Madlib
+
 ## Major Changes
 
 ### React Refactoring: 95% of work
@@ -24,27 +33,39 @@ For layout, used CSS flex for the resulting madlib form.
   
   |
   
-  |----UnfilledMadlib
+  |---- FilledMadlib
   
   |
   
-  |----FilledMadlib
+  |---- UnfilledMadlib
   
        |
        
-       |----TextInputField, NumberInputField,TextEndingInputField
+       |---- TextInputField, TextEndingInputField, NumberInputField
        
-             |
-            
+             |                                    |---- NumberPicker
+                                              
              
-             |----InputFieldWrapper
+             |---- InputFieldWrapper
              
              
 MadLibForm is the main app component.  based on the state of the application, it renders either an UnfilledMadlib Component or a FilledMadlib component.
 
 The UnfilledMadlib component houses the form and all the user inputs.  The FilledMadlib component houses the results page.
 
-InputFIeldWrapper is an HOC component that takes any of the wrapped components (e.g. TextInputField) and renders the wrapped component with a set of event handling props such as onChange or onSubmit, etc.
+InputFIeldWrapper is an HOC component that takes any of the wrapped components (e.g. TextInputField) and renders the wrapped component with a set of event handling props such as onChange or onSubmit, etc.  
+
+Components that wish to utilize the InputFieldWrapper must provide the following:
+- an 'input' component that receives user's input, e.g. the input component or a custom input component
+- a callback routine that accepts the user's submitteddata
+- an optional dynamic validation routine that is called each time a user enters data
+- an optional submit validation that is only called when a user has completed entering data,
+
+TextEndingInputField is a slight modification of the TextInputField.  It adds a validation routine that is called when the user is done with the input.  It checks to see that the inputted value contains a particular suffix.
+
+NumberInputField limits a user to numeric integer values.  It can be configured with min and max values. It utilizes a custom input sub-component, NumberPicker.
+
+NumberPicker has spinner buttons to increment or decrement the input number within the configured range.
 
 ### Issues
 
@@ -54,30 +75,13 @@ I had trouble figuring out how to visually transition a block element with a set
 
 Even though I'm using SASS, I still find CSS to be a giant mess.  On the positive side, I'm never using the important attribute.  And I've limited the use of any nested selectors (which is bad for CSS performance.  I've also not utilized BEM class naming structures which would be beneficial for a larger project.  Ideally, I'd like to look into using more modern React approaches to styling, such as styled components.  TBD for ME.
 
-## Thank you for accepting Flocabulary's Front End Engineer challenge!
 
-At Flocabulary, we strive to provide rich educational materials that are also elegant, intuitive
-web interfaces. In this challenge you'll help create a hypothetical
-feature that's very similar to mad libs ( https://en.wikipedia.org/wiki/Mad_Libs ).
-It won't be highly educational, but with your help, it'll at least have a good UI.
+### Installation Directions
 
-Here's a live hosted demo of this functionality: https://flocabulary.github.io/madlibs-ui-challenge/
-
-It's functional, but it clearly needs some styling and finessing. A Flocabulary designer has provided a set of mocks for how the feature should look and feel. Those mocks can be seen here:
-https://drive.google.com/drive/folders/1Sq946n18SD2QJTdwRXPp8Tfq_Uvrr2Zh?usp=sharing
-
-## Your Tasks
-
-1. Visually make the feature match the mocks. Where elements change size or color, care should be taken to smoothly transition by usage of CSS features like `transition`, `animation`. The mocks may leave some details out, and here's where you have a chance to show your ingenuity.
-
-2. You'll see that there are a couple fields (`number` and `word ending in -ly`) which could use a little more validation. For the `number` field, ensure that a number is provided. For the field `word ending in -ly`, ensure that the provided value does indeed end with the letters `ly`.
-
-### follow these directions:
 0. install Node.js https://nodejs.org/en/download/
 1. Fork this repo https://help.github.com/articles/fork-a-repo/
 2. Clone forked repo to local folder
 3. In same directory as `package.json`, run `npm install`
 4. To start development server, run `npm start`
-5. To submit your challenge push your updates to your forked repo
 
 This was made with [create react app](https://github.com/facebook/create-react-app).
