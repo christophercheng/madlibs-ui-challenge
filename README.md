@@ -7,6 +7,9 @@ This app was built with React, Javascript & Sass.
 The application is a mock simulation of a Madlib game:
 https://en.wikipedia.org/wiki/Madlib
 
+Run the app with this URL:
+https://christophercheng.github.io/madlibs-ui-challenge/
+
 ## Major Changes
 
 ### React Refactoring: 95% of work
